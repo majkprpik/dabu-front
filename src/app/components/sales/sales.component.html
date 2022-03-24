@@ -1,0 +1,55 @@
+<div class="sales-wrapper">
+  <div class="new-sale">
+    <div class="products">
+      <mat-card *ngFor="let p of products" class="product" style="border: 1px red solid; font-weight: bolder;" >
+        {{ p.name }}
+        -
+        {{ p.price }}kn
+        <hr />
+        U KOSARICI: <span style="color: red;">{{ getProductNumberInCart(p.id) }}</span>
+        <button style="margin: 5px;"
+          (click)="addProduct(p.id)"
+          mat-mini-fab
+          
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>plus_one</mat-icon>
+        </button>
+        <button style="margin: 5px;"
+          (click)="removeProduct(p.id)"
+          mat-mini-fab
+         
+          aria-label="Example icon button with a menu icon"
+        >
+          <mat-icon>exposure_neg_1</mat-icon>
+        </button>
+      </mat-card>
+    </div>
+
+    <!-- <input [(ngModel)]="sale.teka" type="checkbox"> -->
+    <mat-card>
+        <div style="margin: 0px auto; width: 100%;">
+            <mat-checkbox
+              (change)="setTeka($event.checked)"
+              [checked]="sale.teka"
+              class="example-margin"
+              >TEKA</mat-checkbox
+            >
+      
+            <input style="margin-left: 10px;"
+              *ngIf="sale.teka"
+              type="text"
+              name="kum"
+              id="kum"
+              [(ngModel)]="sale.kum"
+            />
+            <mat-checkbox style="margin-left: 10px;" class="example-margin">BUDA</mat-checkbox>
+      
+          <button style="margin-left: 10px;" mat-raised-button color="warn" (click)="makeSale()">PRODAJ</button>
+
+        </div>
+    </mat-card>
+    <!-- ko je zandu!!!!! -->
+    
+  </div>
+</div>

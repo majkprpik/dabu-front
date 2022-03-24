@@ -1,0 +1,21 @@
+<div class="all-sales-wrapper">   
+    <div class="all-sales" [ngStyle]="{border: allSales.length > 0 ? '1px red solid' : ''}">
+        <mat-card *ngFor="let s of allSales" [ngStyle]="{border: '1px red solid'}" style="margin: 5px; font-weight: bolder; color: red; width: 250px;">
+            <div class="all-sales-product" *ngIf="getProductNumber(s, 1)">
+                PIVO OSJECKO 0,5L: {{ getProductNumber(s, 1) ? getProductNumber(s, 1) : '0' }}
+            </div>
+            <div class="all-sales-product" *ngIf="getProductNumber(s, 2)">
+                PIVO OSJECKO 1L: {{ getProductNumber(s, 2) ? getProductNumber(s, 2) : '0' }}
+            </div>
+            <div class="all-sales-product" *ngIf="getProductNumber(s, 3)">
+                PIVO OSJECKO 2L: {{ getProductNumber(s, 3) ? getProductNumber(s, 3) : '0' }}
+            </div>
+            <div class="all-sales-product" *ngIf="getProductNumber(s, 4)">
+                PIVO Karlovacko 0,5L: {{ getProductNumber(s, 4) ? getProductNumber(s, 4) : '0' }}
+            </div>
+            <div class="all-sales-product" *ngIf="getProductNumber(s, 5)">
+                PIVO Karlovacko 1,854L: {{ getProductNumber(s, 5) ? getProductNumber(s, 5) : '0' }}
+            </div>
+        </mat-card>
+    </div>
+</div>

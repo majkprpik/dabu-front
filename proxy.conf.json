@@ -1,0 +1,13 @@
+{
+    "/asdf": {
+      "target": "https://dabu.vercel.app/",
+      "secure": false,
+      "pathRewrite": {
+        "^/asdf": ""
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+}
+
+  
